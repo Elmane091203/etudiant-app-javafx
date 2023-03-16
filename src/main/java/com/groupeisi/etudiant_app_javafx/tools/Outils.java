@@ -33,6 +33,7 @@ public class Outils {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         Stage stage = new Stage(StageStyle.UNDECORATED);
+        stage.centerOnScreen();
         stage.setScene(scene);
         stage.setTitle(title);
         stage.show();

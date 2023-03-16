@@ -15,7 +15,6 @@ public class App extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.centerOnScreen();
-        stage.setResizable(false);
         stage.show();
     }
     public static void main(String[] args){
