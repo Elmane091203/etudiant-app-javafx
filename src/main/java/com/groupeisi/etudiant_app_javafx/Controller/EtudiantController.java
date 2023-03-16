@@ -100,9 +100,9 @@ public class EtudiantController implements Initializable {
     }
 
     @FXML
-    void deconnect(ActionEvent event) throws IOException {
-        Notification.NotifError("Warning", "Vous n'etes plus connectés!");
-        Outils.load(event, "CRUD", "/Fxml/login.fxml");
+        void deconnect(ActionEvent event) throws IOException {
+            Notification.NotifError("Warning", "Vous n'etes plus connectés!");
+            Outils.load(event, "CRUD", "/Fxml/login.fxml");
     }
 
     @FXML

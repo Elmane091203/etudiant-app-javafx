@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClasseImpl implements IClasse {
-    private DB db = new DB();
+    private final DB db = new DB();
     private int ok;
     private ResultSet rs;
 
