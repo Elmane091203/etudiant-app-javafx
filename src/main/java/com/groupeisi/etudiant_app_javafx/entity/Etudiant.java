@@ -10,6 +10,11 @@ public class Etudiant {
     private String prenom;
     private double moyenne;
     private Classe classe;
+
+    public void setC(String c) {
+        this.c = c;
+    }
+
     private String c;
 
     public String getC() {

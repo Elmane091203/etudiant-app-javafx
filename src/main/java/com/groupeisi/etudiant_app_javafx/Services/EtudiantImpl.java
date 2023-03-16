@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class EtudiantImpl implements IEtudiant {
-    private DB db = new DB();
+    private final DB db = new DB();
     private int ok;
     private ResultSet rs;
 
@@ -78,10 +78,13 @@ public class EtudiantImpl implements IEtudiant {
             db.initPrepar(sql);
             rs = db.executeSelect();
             while (rs.next()) {
-                Etudiant etudiant = new Etudiant(rs.getString("nom"), rs.getString("prenom"),
-                        rs.getDouble("moyenne"), classe.get(rs.getInt("classe")));
+                Etudiant etudiant = new Etudiant(rs.getString("nom"),
+                                                rs.getString("prenom"),
+                                                rs.getDouble("moyenne"),
+                                                classe.get(rs.getInt("classe")));
                 etudiant.setId(rs.getInt("id"));
                 etudiant.setMatricule(rs.getString("matricule"));
+                etudiant.setC(etudiant.getClasse().getNom());
                 etudiants.add(etudiant);
             }
         } catch (Exception e) {
@@ -104,6 +107,7 @@ public class EtudiantImpl implements IEtudiant {
                         rs.getDouble("moyenne"), classe.get(rs.getInt("classe")));
                 etudiant.setId(rs.getInt("id"));
                 etudiant.setMatricule(rs.getString("matricule"));
+                etudiant.setC(etudiant.getClasse().getNom());
             }
         } catch (Exception e) {
             e.printStackTrace();
