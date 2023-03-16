@@ -10,7 +10,7 @@ import javafx.stage.StageStyle;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent parent = FXMLLoader.load(getClass().getResource("/FXML/classe.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/FXML/login.fxml"));
         Scene scene = new Scene(parent);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
