@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="383.0" prefWidth="772.0" style="-fx-background-color: gray;" stylesheets="@bootstrap.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupeisi.etudiant_app_javafx.Controller.EtudiantController">
+    <children>
+      <Pane prefHeight="42.0" prefWidth="772.0" style="-fx-background-color: black;">
+         <children>
+              <Label layoutX="14.0" layoutY="4.0" text="CRUD ETUDIANT" textFill="WHITE">
+                  <font>
+                      <Font size="23.0" />
+                  </font>
+            </Label>
+            <Button fx:id="deconnecterBtn" layoutX="647.0" layoutY="5.0" mnemonicParsing="false" onAction="#deconnect" prefHeight="31.0" prefWidth="111.0" styleClass="danger" text="Deconnecter" textAlignment="CENTER" />
+         </children>
+      </Pane>
+        <VBox layoutX="14.0" layoutY="86.0" prefHeight="220.0" prefWidth="219.0">
+            <children>
+                <Label style="-fx-text-fill: white;" text="NOM">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+                <TextField id="nomTfd" fx:id="nomTfd" />
+                <Label layoutX="10.0" layoutY="10.0" style="-fx-text-fill: white;" text="PRENOM">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+                <TextField id="prenomTfd" fx:id="prenomTfd" layoutX="10.0" layoutY="28.0" />
+                <Label layoutX="10.0" layoutY="53.0" prefHeight="18.0" prefWidth="66.0" style="-fx-text-fill: white;" text="MOYENNE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+                <TextField id="matiereTfd" fx:id="moyenneTfd" layoutX="10.0" layoutY="71.0" />
+            <Label layoutX="10.0" layoutY="106.0" prefHeight="18.0" prefWidth="66.0" style="-fx-text-fill: white;" text="CLASSE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="classeCbx" prefWidth="224.0" />
+            <Button fx:id="classeBtn" mnemonicParsing="false" onAction="#classeO" prefHeight="7.0" prefWidth="219.0" styleClass="primary" text="CLASSE" textAlignment="CENTER" />
+            </children></VBox>
+        <TableView fx:id="tableEtudiant" layoutX="274.0" layoutY="56.0" onMouseClicked="#charge" prefHeight="260.0" prefWidth="484.0">
+            <columns>
+                <TableColumn fx:id="idC" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="MatriculeC" prefWidth="81.800048828125" text="MATRICULE" />
+                <TableColumn fx:id="nomC" prefWidth="75.0" text="NOM" />
+                <TableColumn fx:id="prenomC" prefWidth="86.199951171875" text="PRENOM" />
+            <TableColumn fx:id="moyenneC" prefWidth="81.800048828125" text="MOYENNE" />
+                <TableColumn fx:id="classeC" prefWidth="81.800048828125" text="CLASSE" />
+            </columns>
+        </TableView>
+        <Label layoutX="14.0" layoutY="56.0" style="-fx-text-fill: white;" text="Formulaire">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Pane layoutY="336.0" prefHeight="62.0" prefWidth="772.0" style="-fx-background-color: black;">
+            <children>
+                <Button fx:id="enregistreBtn" layoutX="125.0" layoutY="17.0" mnemonicParsing="false" onAction="#save" styleClass="success" text="Enregistrer" textAlignment="CENTER" />
+                <Button fx:id="modifierBtn" layoutX="272.0" layoutY="17.0" mnemonicParsing="false" onAction="#update" prefHeight="31.0" prefWidth="87.0" styleClass="info" text="Modifier" textAlignment="CENTER" />
+                <Button fx:id="supprimerBtn" layoutX="416.0" layoutY="17.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="87.0" styleClass="danger" text="Supprimer" textAlignment="CENTER" />
+                <Button fx:id="viderBtn" layoutX="560.0" layoutY="17.0" mnemonicParsing="false" onAction="#clear" prefHeight="31.0" prefWidth="87.0" styleClass="warning" text="Vider" textAlignment="CENTER" />
+            </children></Pane>
+    </children>
+</AnchorPane>
