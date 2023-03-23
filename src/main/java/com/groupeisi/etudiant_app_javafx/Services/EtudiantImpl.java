@@ -79,9 +79,9 @@ public class EtudiantImpl implements IEtudiant {
             rs = db.executeSelect();
             while (rs.next()) {
                 Etudiant etudiant = new Etudiant(rs.getString("nom"),
-                                                rs.getString("prenom"),
-                                                rs.getDouble("moyenne"),
-                                                classe.get(rs.getInt("classe")));
+                        rs.getString("prenom"),
+                        rs.getDouble("moyenne"),
+                        classe.get(rs.getInt("classe")));
                 etudiant.setId(rs.getInt("id"));
                 etudiant.setMatricule(rs.getString("matricule"));
                 etudiant.setC(etudiant.getClasse().getNom());
@@ -177,7 +177,6 @@ public class EtudiantImpl implements IEtudiant {
             }
             db.closeConnection();
             for (Map.Entry<Integer, Integer> entry : list.entrySet()) {
-                System.out.println("effectif"+entry.getValue()+"id"+entry.getKey());
                 sql = "UPDATE classe set effectif=? WHERE id=?";
                 try {
                     db.initPrepar(sql);
@@ -192,7 +191,5 @@ public class EtudiantImpl implements IEtudiant {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 }

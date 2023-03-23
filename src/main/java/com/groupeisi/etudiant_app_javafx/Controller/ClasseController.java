@@ -70,7 +70,7 @@ public class ClasseController implements Initializable {
 
     @FXML
     void deconnect(ActionEvent event) throws IOException {
-        Notification.NotifSuccess("Info", "Crud etudiants!");
+        Notification.NotifNotice("Info", "Crud etudiants!");
         Outils.load(event, "CRUD", "/Fxml/etudiant.fxml");
     }
 

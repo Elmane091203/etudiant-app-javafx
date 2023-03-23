@@ -23,4 +23,21 @@ public class Notification {
         tray.setNotificationType(type);
         tray.showAndDismiss(Duration.seconds(2));
     }
+
+    public static void NotifInfo(String titre, String message){
+        NotificationType type = NotificationType.INFORMATION;
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(titre);
+        tray.setMessage(message);
+        tray.setNotificationType(type);
+        tray.showAndDismiss(Duration.seconds(2));
+    }
+    public static void NotifNotice(String titre, String message){
+        NotificationType type = NotificationType.NOTICE;
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(titre);
+        tray.setMessage(message);
+        tray.setNotificationType(type);
+        tray.showAndDismiss(Duration.seconds(2));
+    }
 }

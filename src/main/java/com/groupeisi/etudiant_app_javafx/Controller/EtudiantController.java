@@ -90,6 +90,7 @@ public class EtudiantController implements Initializable {
         /**
          * Cette fonction permet d'afficher le formulaire crud de classe
          */
+        Notification.NotifNotice("Info","Crud classe");
         Outils.load(event, "CRUD", "/Fxml/classe.fxml");
 
     }
@@ -101,7 +102,7 @@ public class EtudiantController implements Initializable {
 
     @FXML
         void deconnect(ActionEvent event) throws IOException {
-            Notification.NotifError("Warning", "Vous n'etes plus connectés!");
+            Notification.NotifInfo("Info", "Vous n'etes plus connectés!");
             Outils.load(event, "CRUD", "/Fxml/login.fxml");
     }
 
